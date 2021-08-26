@@ -4,6 +4,7 @@ class CreateClimbingGyms < ActiveRecord::Migration[5.2]
       t.string :name
       t.boolean :ropes
       t.integer :total_routes
+      t.timestamps
     end
   end
 end
