@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'welcome page' do
+RSpec.describe 'welcome' do
   it 'has welcome page' do
     visit '/'
 
