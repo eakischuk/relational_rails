@@ -255,7 +255,39 @@
           null
         ]
       },
-      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/models/gym_member.rb": {
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/choirs_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/climbing_gyms_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/models/climbing_gym.rb": {
         "lines": [
           1,
           1,
@@ -268,15 +300,8 @@
           1,
           null
         ]
-      },
-      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/models/climbing_gym.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1630189992
+    "timestamp": 1630191579
   }
 }
