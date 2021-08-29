@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe GymMember do
+RSpec.describe GymMember, type: :model do
   it {should belong_to :climbing_gym}
 
   it 'has full name' do
