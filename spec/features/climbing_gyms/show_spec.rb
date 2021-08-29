@@ -27,9 +27,6 @@ RSpec.describe 'climbing gym show page' do
 
     expect(page).to have_content("Number of Routes: 200")
   end
-# As a visitor
-# When I visit a parent's show page
-# I see a count of the number of children associated with this parent
 
   it 'displays number of members associated' do
     visit "/climbing_gyms/#{@et.id}"
@@ -37,5 +34,12 @@ RSpec.describe 'climbing gym show page' do
 
     visit "/climbing_gyms/#{@dbc.id}"
     expect(page).to have_content("Total Members: 0")
+  end
+
+  it 'has link to all members' do
+    visit "/climbing_gyms/#{@et.id}"
+    
+    click_on 'All Gym Members'
+    expect(current_path).to eq('/gym_members')
   end
 end

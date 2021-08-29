@@ -37,4 +37,11 @@ RSpec.describe 'Climbing Gym members index' do
     visit "/climbing_gyms/#{@movement.id}/gym_members"
     expect(page).to have_content("Monthly Check-ins: #{@rosa.monthly_checkins}")
   end
+
+  it 'has all members link' do
+    visit "/climbing_gyms/#{@et.id}/gym_members"
+    
+    click_on 'All Gym Members'
+    expect(current_path).to eq('/gym_members')
+  end
 end

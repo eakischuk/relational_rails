@@ -29,4 +29,11 @@ RSpec.describe 'Cimbing Gym index', type: :feature do
     expect("#{@dbc.name}").to appear_before("#{@dbc.created_at}", only_text: true)
     expect("Denver Bouldering Club - Date Created: #{@dbc.created_at}").to appear_before("EarthTreks - Date Created: #{@et.created_at}", only_text: true)
   end
+
+  it 'has all members link' do
+    visit "/climbing_gyms"
+
+    click_on 'All Gym Members'
+    expect(current_path).to eq('/gym_members')
+  end
 end

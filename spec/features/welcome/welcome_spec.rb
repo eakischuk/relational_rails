@@ -18,4 +18,11 @@ RSpec.describe 'welcome' do
     click_on 'Climbing Gyms'
     expect(current_path).to eq('/climbing_gyms')
   end
+
+  it 'has child index links' do
+    visit '/'
+    
+    click_on 'All Gym Members'
+    expect(current_path).to eq('/gym_members')
+  end
 end
