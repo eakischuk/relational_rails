@@ -1,4 +1,5 @@
 <h2><%= @gym.name %></h2>
+<nav><a href="/gym_members">All Gym Members</a></nav>
 <% @members.each do |member| %>
 <ul><h3><%= member.full_name %></h3>
   <li>Belay Certified: <%= member.belay_status %></li>
