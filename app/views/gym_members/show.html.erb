@@ -1,0 +1,6 @@
+<nav><a href="/climbing_gyms">Climbing Gyms</a><a href="/gym_members">All Gym Members</a></nav>
+<ul><h2><%= @gym_member.full_name %></h2>
+  <li>Home Gym: <%= @gym_member.climbing_gym.name %></li>
+  <li>Belay Certified: <%= @gym_member.belay_status %></li>
+  <li>Monthly Check-ins: <%= @gym_member.monthly_checkins %></li>
+</ul>

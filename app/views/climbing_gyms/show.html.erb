@@ -1,0 +1,6 @@
+<h2><%= @gym.name %></h2>
+<nav><a href="/climbing_gyms">Climbing Gyms</a> <a href="/gym_members">All Gym Members</a></nav>
+<p>Ropes: <%= @gym.ropes %></p>
+<p>Number of Routes: <%= @gym.total_routes %></p>
+<p>Total Members: <%= @gym.member_count %></p>
+<a href=<%= "/climbing_gyms/#{@gym.id}/gym_members" %>><%= @gym.name %> Members</a>
