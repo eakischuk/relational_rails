@@ -1,4 +1,5 @@
 <h1>Gym Members</h1>
+<nav><a href="/climbing_gyms">Climbing Gyms</a></nav>
 <% @gym_members.each do |gym_member| %>
   <h3><%= gym_member.full_name %></h3>
   <p>Home Gym: <%= gym_member.climbing_gym.name %></p>
