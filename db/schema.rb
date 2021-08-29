@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_030122) do
     t.integer "total_routes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
   end
 
   create_table "gym_members", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_030122) do
     t.string "last_name"
     t.boolean "belay_status"
     t.integer "monthly_checkins"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "climbing_gym_id"
