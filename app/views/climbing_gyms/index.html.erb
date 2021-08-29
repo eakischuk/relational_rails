@@ -1,4 +1,4 @@
 <h1>Climbing Gyms</h1>
 <% @gyms.each do |gym|%>
-  <%= gym.name %>
+  <p><%= "#{gym.name} - Date Created: #{gym.created_at}" %></p>
 <% end %>
