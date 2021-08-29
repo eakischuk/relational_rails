@@ -247,6 +247,7 @@
           1,
           1,
           1,
+          1,
           null
         ]
       },
@@ -270,15 +271,22 @@
           null
         ]
       },
-      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/climbing_gyms_controller.rb": {
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/models/gym_member.rb": {
         "lines": [
           1,
           1,
-          0,
-          null,
           null,
           1,
-          3,
+          15,
+          null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/gym_members_controller.rb": {
+        "lines": [
+          1,
+          1,
+          4,
           null,
           null
         ]
@@ -290,6 +298,6 @@
         ]
       }
     },
-    "timestamp": 1630193689
+    "timestamp": 1630197145
   }
 }
