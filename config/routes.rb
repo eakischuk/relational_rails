@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/choirs', to: 'choirs#index'
   get '/climbing_gyms', to: 'climbing_gyms#index'
   get '/climbing_gyms/:id', to: 'climbing_gyms#show'
+  get '/gym_members', to: 'gym_members#index'
 end
