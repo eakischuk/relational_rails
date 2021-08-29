@@ -4,4 +4,8 @@ class ClimbingGym < ApplicationRecord
   def self.order_by_creation
     self.all.order(created_at: :desc)
   end
+
+  def member_count
+    gym_members.count
+  end
 end
