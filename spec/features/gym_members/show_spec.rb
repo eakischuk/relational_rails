@@ -43,8 +43,15 @@ RSpec.describe 'Gym Members show page' do
 
   it 'has all members link' do
     visit "/gym_members/#{@rosa.id}"
-    
+
     click_on 'All Gym Members'
     expect(current_path).to eq('/gym_members')
+  end
+
+  it 'has climbing gyms link' do
+    visit "/gym_members/#{@rosa.id}"
+
+    click_on 'Climbing Gyms'
+    expect(current_path).to eq('/climbing_gyms')
   end
 end
