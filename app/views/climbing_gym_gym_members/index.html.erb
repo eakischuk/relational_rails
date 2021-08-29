@@ -1,0 +1,7 @@
+<h2><%= @gym.name %></h2>
+<% @members.each do |member| %>
+<ul><h3><%= member.full_name %></h3>
+  <li>Belay Certified: <%= member.belay_status %></li>
+  <li>Monthly Check-ins: <%= member.monthly_checkins %></li>
+</ul>
+<% end %>
