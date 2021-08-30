@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+GymMember.destroy_all
+ClimbingGym.destroy_all
+
+et = ClimbingGym.create!(name: "EarthTreks", ropes: true, total_routes: 200)
+movement = ClimbingGym.create!(name: "Movement RiNo", ropes: false, total_routes: 70)
+
+et.gym_members.create!(first_name: "Amy", last_name: "Santiago", belay_status: true, monthly_checkins: 12)
+et.gym_members.create!(first_name: "Jake", last_name: "Peralta", belay_status: false, monthly_checkins: 3)
+movement.gym_members.create!(first_name: "Rosa", last_name: "Diaz", belay_status: true, monthly_checkins: 14)
+# @amy = GymMember.create!(climbing_gym: @et, first_name: "Amy", last_name: "Santiago", belay_status: true, monthly_checkins: 12)
+# @jake = GymMember.create!(climbing_gym: @et, first_name: "Jake", last_name: "Peralta", belay_status: false, monthly_checkins: 3)
+# @rosa = GymMember.create!(climbing_gym: @movement, first_name: "Rosa", last_name: "Diaz", belay_status: true, monthly_checkins: 14)

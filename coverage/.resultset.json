@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/environment.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/environment.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           1,
@@ -10,7 +14,11 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/application.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/application.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           1,
           null,
@@ -47,7 +55,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/boot.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/boot.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           1,
           null,
@@ -55,7 +67,11 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/environments/test.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/environments/test.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           1,
           null,
@@ -105,7 +121,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/initializers/application_controller_renderer.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/initializers/application_controller_renderer.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           null,
@@ -117,7 +137,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/initializers/assets.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/initializers/assets.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           null,
@@ -135,7 +159,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/initializers/backtrace_silencers.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/initializers/backtrace_silencers.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           null,
@@ -146,7 +174,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/initializers/content_security_policy.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/initializers/content_security_policy.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           null,
@@ -175,7 +207,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/initializers/cookies_serializer.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/initializers/cookies_serializer.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           null,
@@ -184,7 +220,11 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/initializers/filter_parameter_logging.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/initializers/filter_parameter_logging.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           null,
@@ -192,7 +232,11 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/initializers/inflections.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/initializers/inflections.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           null,
@@ -212,7 +256,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/initializers/mime_types.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/initializers/mime_types.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           null,
@@ -220,7 +268,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/initializers/wrap_parameters.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/initializers/wrap_parameters.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           null,
           null,
@@ -238,7 +290,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/miriamaceves/mod2/project1/relational_rails/config/routes.rb": {
+=======
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/config/routes.rb": {
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
         "lines": [
           1,
           null,
@@ -246,6 +302,7 @@
           1,
           1,
           1,
+<<<<<<< HEAD
           null
         ]
       },
@@ -273,10 +330,101 @@
         "lines": [
           1,
           1,
+=======
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/models/climbing_gym.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          9,
+          null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/models/gym_member.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/climbing_gyms_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          9,
+          null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/gym_members_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/climbing_gym_gym_members_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          null,
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
           null
         ]
       }
     },
+<<<<<<< HEAD
     "timestamp": 1630028012
+=======
+    "timestamp": 1630270131
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
   }
 }

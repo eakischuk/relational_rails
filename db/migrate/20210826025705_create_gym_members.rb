@@ -5,6 +5,7 @@ class CreateGymMembers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.boolean :belay_status
       t.integer :monthly_checkins
+      
       t.timestamps
     end
   end

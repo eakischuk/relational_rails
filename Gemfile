@@ -41,7 +41,12 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
+<<<<<<< HEAD
   gem 'shoulda-matchers', '~> 5.0'
+=======
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'orderly'
+>>>>>>> 10237bb2c59c73c8f61afa51127c7bdf4343a534
 end
 
 group :development do
