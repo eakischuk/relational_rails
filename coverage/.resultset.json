@@ -250,6 +250,14 @@
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -269,7 +277,7 @@
           null,
           null,
           1,
-          9,
+          0,
           null,
           null
         ]
@@ -287,8 +295,44 @@
           1,
           null,
           1,
-          5,
+          35,
           null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/gym_members_controller.rb": {
+        "lines": [
+          1,
+          1,
+          7,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
           null
         ]
       },
@@ -300,41 +344,40 @@
           null,
           null,
           1,
-          9,
+          0,
           null,
-          null
-        ]
-      },
-      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/gym_members_controller.rb": {
-        "lines": [
-          1,
-          1,
+          null,
           1,
           null,
           null,
           1,
           0,
           null,
-          null
-        ]
-      },
-      "/Users/erikakischuk/turing/mod2/mod2_projects/relational_rails/app/controllers/climbing_gym_gym_members_controller.rb": {
-        "lines": [
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
           1,
+          0,
+          null,
+          null,
           1,
-          2,
-          2,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
           null,
           null
         ]
       }
     },
-    "timestamp": 1630270131
+    "timestamp": 1630363738
   }
 }

@@ -1,0 +1,16 @@
+<form action="/gym_members/<%= @gym_member.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <p>Edit <%= @gym_member.full_name %></p>
+  <label for="first_name">First Name:</label><br>
+  <input type="text" id="first_name" name="first_name" value="<%= @gym_member.first_name %>"><br>
+  <label for="last_name">Last Name:</label><br>
+  <input type="text" id="last_name" name="last_name" value="<%= @gym_member.last_name %>"><br>
+  <p>Belay Certified?</p>
+  <input type="radio" id="belay" value="true" name="belay_status" <% if @gym_member.belay_status == true %> checked <% end %>>
+  <label for="belay">True</label><br>
+  <input type="radio" id="no_belay" value="false" name="belay_status" <% if @gym_member.belay_status == false %> checked <% end %>>
+  <label for="no_belay">False</label><br>
+  <label for="checkins">Monthly Check-ins:</label><br>
+  <input type="text" id="checkins" name="checkins" value="<%= @gym_member.monthly_checkins %>"><br>
+  <input type="submit" value="Update <%= @gym_member.full_name %>"

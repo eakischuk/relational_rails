@@ -8,43 +8,56 @@ RSpec.describe 'Gym Members index' do
     @jake = GymMember.create!(climbing_gym: @et, first_name: "Jake", last_name: "Peralta", belay_status: false, monthly_checkins: 3)
     @rosa = GymMember.create!(climbing_gym: @movement, first_name: "Rosa", last_name: "Diaz", belay_status: true, monthly_checkins: 14)
   end
+  describe 'belay certified members' do
+    it 'displays member names' do
+      visit '/gym_members'
 
-  it 'displays member names' do
-    visit '/gym_members'
+      expect(page).to have_content(@amy.full_name)
+      expect(page).to have_content(@rosa.full_name)
+      expect(page).to_not have_content(@jake.full_name)
+    end
 
-    expect(page).to have_content(@amy.full_name)
-    expect(page).to have_content(@jake.full_name)
-    expect(page).to have_content(@rosa.full_name)
-  end
+    it 'displays home gym' do
+      visit '/gym_members'
 
-  it 'displays home gym' do
-    visit '/gym_members'
+      expect(page).to have_content("Home Gym: #{@amy.climbing_gym.name}")
+      expect(page).to have_content("Home Gym: #{@rosa.climbing_gym.name}")
+    end
 
-    expect(page).to have_content("Home Gym: #{@amy.climbing_gym.name}")
-    expect(page).to have_content("Home Gym: #{@jake.climbing_gym.name}")
-    expect(page).to have_content("Home Gym: #{@rosa.climbing_gym.name}")
-  end
+    it 'displays belay status' do
+      visit '/gym_members'
 
-  it 'displays belay status' do
-    visit '/gym_members'
+      expect(page).to have_content("Belay Certified: #{@amy.belay_status}")
+      expect(page).to have_content("Belay Certified: #{@rosa.belay_status}")
+      expect(page).to_not have_content("Belay Certified: #{@jake.belay_status}")
+    end
 
-    expect(page).to have_content("Belay Certified: #{@amy.belay_status}")
-    expect(page).to have_content("Belay Certified: #{@jake.belay_status}")
-    expect(page).to have_content("Belay Certified: #{@rosa.belay_status}")
-  end
+    it 'displays check-in count' do
+      visit '/gym_members'
 
-  it 'displays check-in count' do
-    visit '/gym_members'
+      expect(page).to have_content("Monthly Check-ins: #{@amy.monthly_checkins}")
+      expect(page).to have_content("Monthly Check-ins: #{@rosa.monthly_checkins}")
+      expect(page).to_not have_content("Monthly Check-ins: #{@jake.monthly_checkins}")
+    end
 
-    expect(page).to have_content("Monthly Check-ins: #{@amy.monthly_checkins}")
-    expect(page).to have_content("Monthly Check-ins: #{@jake.monthly_checkins}")
-    expect(page).to have_content("Monthly Check-ins: #{@rosa.monthly_checkins}")
-  end
+    it 'has all gyms link' do
+      visit '/gym_members'
 
-  it 'has all gyms link' do
-    visit '/gym_members'
+      click_on 'Climbing Gyms'
+      expect(current_path).to eq('/climbing_gyms')
+    end
 
-    click_on 'Climbing Gyms'
-    expect(current_path).to eq('/climbing_gyms')
+    it 'has update link for each member' do
+      visit '/gym_members'
+      expect(page).to_not have_content("Update Jake Peralta")
+
+      click_on 'Update Amy Santiago'
+      expect(current_path).to eq("/gym_members/#{@amy.id}/edit")
+
+      visit '/gym_members'
+
+      click_on 'Update Rosa Diaz'
+      expect(current_path).to eq("/gym_members/#{@rosa.id}/edit")
+    end
   end
 end

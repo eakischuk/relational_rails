@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'climbing gym show page' do
+RSpec.describe 'climbing gym show page', type: :feature do
   before(:each) do
     @et = ClimbingGym.create!(name: "EarthTreks", ropes: true, total_routes: 200, updated_at: '2021-08-26 01:11:07 UTC', created_at: '2021-08-26 01:11:07 UTC')
     @movement = ClimbingGym.create!(name: "Movement RiNo", ropes: false, total_routes: 70, updated_at: '2021-08-27 01:11:07 UTC', created_at: '2021-08-27 01:11:07 UTC')

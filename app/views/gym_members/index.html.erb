@@ -5,4 +5,5 @@
   <p>Home Gym: <%= gym_member.climbing_gym.name %></p>
   <p>Belay Certified: <%= gym_member.belay_status %></p>
   <p>Monthly Check-ins: <%= gym_member.monthly_checkins %></p>
+  <a href="/gym_members/<%= gym_member.id %>/edit">Update <%= gym_member.full_name %></a>
 <% end %>
