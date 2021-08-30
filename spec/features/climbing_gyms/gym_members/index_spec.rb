@@ -4,8 +4,8 @@ RSpec.describe 'Climbing Gym members index' do
   before(:each) do
     @et = ClimbingGym.create!(name: "EarthTreks", ropes: true, total_routes: 200)
     @movement = ClimbingGym.create!(name: "Movement RiNo", ropes: false, total_routes: 70)
-    @amy = GymMember.create!(climbing_gym: @et, first_name: "Amy", last_name: "Santiago", belay_status: true, monthly_checkins: 12)
     @jake = GymMember.create!(climbing_gym: @et, first_name: "Jake", last_name: "Peralta", belay_status: false, monthly_checkins: 3)
+    @amy = GymMember.create!(climbing_gym: @et, first_name: "Amy", last_name: "Santiago", belay_status: true, monthly_checkins: 12)
     @rosa = GymMember.create!(climbing_gym: @movement, first_name: "Rosa", last_name: "Diaz", belay_status: true, monthly_checkins: 14)
   end
 
@@ -14,10 +14,13 @@ RSpec.describe 'Climbing Gym members index' do
 
     expect(page).to have_content(@amy.full_name)
     expect(page).to have_content(@jake.full_name)
+    expect("Amy Santiago").to appear_before("Jake Peralta", only_text: true)
 
     visit "/climbing_gyms/#{@movement.id}/gym_members"
 
     expect(page).to have_content(@rosa.full_name)
+    expect(page).to_not have_content(@amy.full_name)
+    expect(page).to_not have_content(@jake.full_name)
   end
 
   it 'shows all members belay status' do
@@ -27,15 +30,19 @@ RSpec.describe 'Climbing Gym members index' do
 
     visit "/climbing_gyms/#{@movement.id}/gym_members"
     expect(page).to have_content("Belay Certified: #{@rosa.belay_status}")
+    expect(page).to_not have_content("Belay Certified: false")
   end
 
   it 'shows all members monthly check in' do
     visit "/climbing_gyms/#{@et.id}/gym_members"
     expect(page).to have_content("Monthly Check-ins: #{@amy.monthly_checkins}")
     expect(page).to have_content("Monthly Check-ins: #{@jake.monthly_checkins}")
+    expect("Monthly Check-ins: 12").to appear_before("Monthly Check-ins: 3", only_text: true)
 
     visit "/climbing_gyms/#{@movement.id}/gym_members"
     expect(page).to have_content("Monthly Check-ins: #{@rosa.monthly_checkins}")
+    expect(page).to_not have_content("Monthly Check-ins: #{@amy.monthly_checkins}")
+    expect(page).to_not have_content("Monthly Check-ins: #{@jake.monthly_checkins}")
   end
 
   it 'has all members link' do
