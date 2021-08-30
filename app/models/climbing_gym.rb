@@ -1,5 +1,5 @@
 class ClimbingGym < ApplicationRecord
-  has_many :gym_members
+  has_many :gym_members, :dependent => :destroy
 
   def self.order_by_creation
     self.all.order(created_at: :desc)

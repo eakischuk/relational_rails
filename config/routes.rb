@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/climbing_gyms/:gym_id', to: 'climbing_gyms#show'
   get '/climbing_gyms/:gym_id/edit', to: 'climbing_gyms#edit'
   patch '/climbing_gyms/:gym_id', to: 'climbing_gyms#update'
+  delete '/climbing_gyms/:gym_id', to: 'climbing_gyms#destroy'
   get '/climbing_gyms/:gym_id/gym_members', to: 'climbing_gym_gym_members#index'
   get '/climbing_gyms/:gym_id/gym_members/new', to: 'climbing_gym_gym_members#new'
   post '/climbing_gyms/:gym_id/gym_members', to: 'climbing_gym_gym_members#create'

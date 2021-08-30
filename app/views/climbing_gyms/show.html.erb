@@ -5,3 +5,4 @@
 <p>Total Members: <%= @gym.member_count %></p>
 <a href=<%= "/climbing_gyms/#{@gym.id}/gym_members" %>><%= @gym.name %> Members</a>
 <a href=<%= "/climbing_gyms/#{@gym.id}/edit" %>>Update <%= @gym.name %></a>
+<%= button_to "Delete #{@gym.name}", "/climbing_gyms/#{@gym.id}", method: :delete %>
