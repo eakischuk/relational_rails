@@ -4,6 +4,6 @@ class ChoirsController < ApplicationController
   end
 
   def show
-    @choir = Choir.all
+    @choir = Choir.find_by(id: params[:id])
   end
 end
