@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   post '/climbing_gyms/:gym_id/gym_members', to: 'climbing_gym_gym_members#create'
   get '/gym_members', to: 'gym_members#index'
   get '/gym_members/:member_id', to: 'gym_members#show'
+  get '/gym_members/:member_id/edit', to: 'gym_members#edit'
+  patch '/gym_members/:member_id', to: 'gym_members#update'
 end
