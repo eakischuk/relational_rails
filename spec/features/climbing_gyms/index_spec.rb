@@ -36,4 +36,18 @@ RSpec.describe 'Cimbing Gym index', type: :feature do
     click_on 'All Gym Members'
     expect(current_path).to eq('/gym_members')
   end
+
+  it 'has update buttons for each gym' do
+    visit "/climbing_gyms"
+    click_on 'Update EarthTreks'
+    expect(current_path).to eq("/climbing_gyms/#{@et.id}/edit")
+
+    visit "/climbing_gyms"
+    click_on 'Update Movement RiNo'
+    expect(current_path).to eq("/climbing_gyms/#{@movement.id}/edit")
+
+    visit "/climbing_gyms"
+    click_on 'Update Denver Bouldering Club'
+    expect(current_path).to eq("/climbing_gyms/#{@dbc.id}/edit")
+  end
 end
