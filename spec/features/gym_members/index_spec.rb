@@ -46,5 +46,18 @@ RSpec.describe 'Gym Members index' do
       click_on 'Climbing Gyms'
       expect(current_path).to eq('/climbing_gyms')
     end
+
+    it 'has update link for each member' do
+      visit '/gym_members'
+      expect(page).to_not have_content("Update Jake Peralta")
+
+      click_on 'Update Amy Santiago'
+      expect(current_path).to eq("/gym_members/#{@amy.id}/edit")
+
+      visit '/gym_members'
+
+      click_on 'Update Rosa Diaz'
+      expect(current_path).to eq("/gym_members/#{@rosa.id}/edit")
+    end
   end
 end
