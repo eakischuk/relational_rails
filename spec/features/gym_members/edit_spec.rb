@@ -20,7 +20,7 @@ RSpec.describe 'edit gym member form', type: :feature do
 
 
     choose('False')
-    fill_in('Monthly Check-ins', with: 4)
+    fill_in('Monthly Check-ins:', with: 4)
     click_button("Update #{@amy.full_name}")
 
     expect(current_path).to eq("/gym_members/#{@amy.id}")
