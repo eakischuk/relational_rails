@@ -1,0 +1,8 @@
+<h1>Choir</h1>
+
+<% @choir.each do |choir|%>
+  <h3> <%= choir.name %></h3>
+  <p>Openings: <%= choir.openings %></p>
+  <p>Active: <%= choir.active %></p>
+
+<% end %>
