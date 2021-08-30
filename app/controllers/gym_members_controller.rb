@@ -1,6 +1,6 @@
 class GymMembersController < ApplicationController
   def index
-    @gym_members = GymMember.all
+    @gym_members = GymMember.where(belay_status: true)
   end
 
   def show
@@ -13,6 +13,7 @@ class GymMembersController < ApplicationController
 
   def update
     member = GymMember.find(params[:member_id])
+
     member.update({
       first_name: params[:first_name],
       last_name: params[:last_name],
