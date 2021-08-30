@@ -1,0 +1,14 @@
+<form action="/climbing_gyms/<%= @gym.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <p>Edit <%= @gym.name %></p>
+  <label for="name">Gym Name:</label><br>
+  <input type="text" id="name" name="name" value="<%= @gym.name %>"><br>
+  <p>Ropes available?</p>
+  <input type="radio" id="ropes" value="true" name="ropes_available" <% if @gym.ropes == true %> checked <% end %>>
+  <label for="ropes">True</label><br>
+  <input type="radio" id="no_ropes" value="false" name="ropes_available" <% if @gym.ropes == false %> checked <% end %>>
+  <label for="no_ropes">False</label><br>
+  <label for="route_count">Total Routes:</label><br>
+  <input type="text" id="route_count" name="total_routes" value="<%= @gym.total_routes %>"><br>
+  <input type="submit" value="Update <%= @gym.name %>"
