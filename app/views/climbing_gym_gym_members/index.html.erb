@@ -7,3 +7,4 @@
 </ul>
 <% end %>
 <a href="/climbing_gyms/<%= @gym.id %>/gym_members/new">Create Gym Member</a>
+<%= link_to "Order Members", "/climbing_gyms/#{@gym.id}/gym_members?order=alphabet" %>

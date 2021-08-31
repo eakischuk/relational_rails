@@ -8,4 +8,12 @@ class ClimbingGym < ApplicationRecord
   def member_count
     gym_members.count
   end
+
+  def sort_members(order = false)
+    if order
+      gym_members.order(:first_name, :last_name)
+    else
+      gym_members
+    end
+  end
 end

@@ -1,7 +1,7 @@
 class ClimbingGymGymMembersController < ApplicationController
   def index
     @gym = ClimbingGym.find(params[:gym_id])
-    @members = @gym.gym_members.order(:first_name, :last_name)
+    @members = @gym.sort_members(params[:order])
   end
 
   def new
