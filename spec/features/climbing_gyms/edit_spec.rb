@@ -16,8 +16,8 @@ RSpec.describe 'edit gym form', type: :feature do
     visit "/climbing_gyms/#{@et.id}/edit"
 
 
-    choose('False')
-    fill_in('Total Routes', with: 300)
+    choose('No Ropes')
+    fill_in('Total routes', with: 300)
     click_button("Update #{@et.name}")
 
     expect(current_path).to eq("/climbing_gyms/#{@et.id}")
