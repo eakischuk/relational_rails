@@ -1,6 +1,6 @@
 class ChoirsController < ApplicationController
   def index
-    @choir = Choir.all
+    @choir = Choir.order_by_creation
   end
 
   def show
