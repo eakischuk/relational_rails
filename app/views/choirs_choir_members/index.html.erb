@@ -1,0 +1,7 @@
+<% @choirs_choir_members.each do |member|%>
+  <h3><%= link_to member.name, "/choir_members/#{member.id}" %></h3>
+  <p>Age: <%=member.age %></p>
+  <p>Active: <%=member.active %></p>
+  <p>Voice Type: <%=member.voice_type %></p>
+  <p>Choir: <%=member.choir.name %></p>
+<%end%>

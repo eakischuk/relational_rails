@@ -1,0 +1,14 @@
+<nav>
+  <a href="/choirs">All Choirs</a>
+  <a href="/choir_members">All Choir Members</a>
+</nav>
+
+<h1>Choir Members</h1>
+
+<% @choir_members.each do |member|%>
+  <h3><%= link_to member.name, "/choir_members/#{member.id}" %></h3>
+  <p>Age: <%=member.age %></p>
+  <p>Active: <%=member.active %></p>
+  <p>Voice Type: <%=member.voice_type %></p>
+  <p>Choir: <%=member.choir.name %></p>
+<%end%>
