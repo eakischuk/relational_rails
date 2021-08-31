@@ -1,14 +1,12 @@
-<form action="/climbing_gyms" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>Enter a new Climbing Gym: </p>
-  <label for="name">Gym Name:</label><br>
-  <input type="text" id="name" name="name"><br>
-  <p>Ropes available?</p>
-  <input type="radio" id="ropes" value="true" name="ropes_available">
-  <label for="ropes">True</label><br>
-  <input type="radio" id="no_ropes" value="false" name="ropes_available">
-  <label for="no_ropes">False</label><br>
-  <label for="route_count">Total Routes:</label><br>
-  <input type="text" id="route_count" name="total_routes"><br>
-  <input type="submit" value="Create Climbing Gym"
-</form>
+<%= form_with url: "/climbing_gyms", method: :post, local: true do |f| %>
+
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.radio_button :ropes_available, 'true' %>
+  <%= f.label :ropes_available_true, 'Ropes' %>
+  <%= f.radio_button :ropes_available, 'false' %>
+  <%= f.label :ropes_available_false, 'No Ropes' %><br>
+  <%= f.label :total_routes %><br>
+  <%= f.number_field :total_routes %><br>
+  <%= f.submit "Create Climbing Gym" %>
+<% end %>
