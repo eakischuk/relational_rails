@@ -15,7 +15,7 @@ RSpec.describe 'edit gym member form', type: :feature do
     expect(current_path).to eq("/gym_members/#{@amy.id}/edit")
   end
 
-  it 'can update a gym member' do
+  xit 'can update a gym member' do
     visit "/gym_members/#{@amy.id}/edit"
 
 
@@ -29,7 +29,7 @@ RSpec.describe 'edit gym member form', type: :feature do
     expect(page).to have_content("Belay Certified: false")
   end
 
-  it 'makes no changes without input' do
+  xit 'makes no changes without input' do
     visit "/gym_members/#{@rosa.id}/edit"
 
     click_button("Update #{@rosa.full_name}")

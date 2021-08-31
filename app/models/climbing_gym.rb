@@ -2,7 +2,7 @@ class ClimbingGym < ApplicationRecord
   has_many :gym_members, :dependent => :destroy
 
   def self.order_by_creation
-    self.all.order(created_at: :desc)
+    all.order(created_at: :desc)
   end
 
   def member_count
