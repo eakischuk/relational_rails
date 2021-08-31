@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_030122) do
     t.integer "total_routes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
   end
 
   create_table "gym_members", force: :cascade do |t|
@@ -52,6 +53,20 @@ ActiveRecord::Schema.define(version: 2021_08_26_030122) do
     t.bigint "climbing_gym_id"
     t.index ["climbing_gym_id"], name: "index_gym_members_on_climbing_gym_id"
   end
+
+
+  create_table "gym_members", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "belay_status"
+    t.integer "monthly_checkins"
+
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "climbing_gym_id"
+    t.index ["climbing_gym_id"], name: "index_gym_members_on_climbing_gym_id"
+  end
+
 
   add_foreign_key "choir_members", "choirs"
   add_foreign_key "gym_members", "climbing_gyms"
