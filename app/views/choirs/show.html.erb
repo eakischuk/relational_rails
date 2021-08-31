@@ -1,0 +1,8 @@
+<h1>Choir</h1>
+
+
+  <h3> <%= @choir.name %></h3>
+  <p>Openings: <%= @choir.openings %></p>
+  <p>Active: <%= @choir.active %></p>
+
+  <h4><%= link_to "See Members", "/choirs/#{@choir.id}/choir_members"%></h4>
