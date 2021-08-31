@@ -5,3 +5,4 @@
   <li>Monthly Check-ins: <%= @gym_member.monthly_checkins %></li>
 </ul>
 <a href="/gym_members/<%= @gym_member.id %>/edit">Update <%= @gym_member.full_name %></a>
+<%= button_to "Delete #{@gym_member.full_name}", "/gym_members/#{@gym_member.id}", method: :delete %>

@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get '/gym_members/:member_id', to: 'gym_members#show'
   get '/gym_members/:member_id/edit', to: 'gym_members#edit'
   patch '/gym_members/:member_id', to: 'gym_members#update'
+  delete '/gym_members/:member_id', to: 'gym_members#destroy'
 end

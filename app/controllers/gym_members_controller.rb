@@ -23,4 +23,10 @@ class GymMembersController < ApplicationController
     member.save
     redirect_to "/gym_members/#{member.id}"
   end
+
+  def destroy
+    member = GymMember.find(params[:member_id])
+    member.destroy
+    redirect_to '/gym_members'
+  end
 end
