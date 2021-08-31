@@ -4,3 +4,4 @@
   <li>Belay Certified: <%= @gym_member.belay_status %></li>
   <li>Monthly Check-ins: <%= @gym_member.monthly_checkins %></li>
 </ul>
+<a href="/gym_members/<%= @gym_member.id %>/edit">Update <%= @gym_member.full_name %></a>

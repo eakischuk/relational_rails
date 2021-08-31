@@ -1,5 +1,7 @@
 <h1>Climbing Gyms</h1>
 <nav><a href="/gym_members">All Gym Members</a></nav>
 <% @gyms.each do |gym|%>
-  <p><%= "#{gym.name} - Date Created: #{gym.created_at}" %></p>
+  <p><%= "#{gym.name} - Date Created: #{gym.created_at}" %> - <a href="/climbing_gyms/<%= gym.id %>/edit">Update <%= gym.name %></a></p>
+<br>
 <% end %>
+<a href="/climbing_gyms/new">New Climbing Gym</a>

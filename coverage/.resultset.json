@@ -711,6 +711,9 @@
           1,
           null,
           1,
+          7,
+          null,
+          null,
           1,
           6,
           6,
@@ -795,6 +798,8 @@
       "/Users/miriamaceves/mod2/project1/relational_rails/app/models/climbing_gym.rb": {
         "lines": [
           1,
+          null,
+          null,
           1,
           null,
           1,
@@ -863,6 +868,7 @@
           1,
           0,
           null,
+
           null
         ]
       },

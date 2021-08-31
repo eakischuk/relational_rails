@@ -4,3 +4,4 @@
 <p>Number of Routes: <%= @gym.total_routes %></p>
 <p>Total Members: <%= @gym.member_count %></p>
 <a href=<%= "/climbing_gyms/#{@gym.id}/gym_members" %>><%= @gym.name %> Members</a>
+<a href=<%= "/climbing_gyms/#{@gym.id}/edit" %>>Update <%= @gym.name %></a>
