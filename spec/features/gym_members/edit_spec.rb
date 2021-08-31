@@ -15,12 +15,13 @@ RSpec.describe 'edit gym member form', type: :feature do
     expect(current_path).to eq("/gym_members/#{@amy.id}/edit")
   end
 
-  xit 'can update a gym member' do
+  it 'can update a gym member' do
     visit "/gym_members/#{@amy.id}/edit"
 
 
-    choose('False')
-    fill_in('Monthly Check-ins:', with: 4)
+    choose('Not Belay Certified')
+    # save_and_open_page
+    fill_in('Monthly checkins', with: 4)
     click_button("Update #{@amy.full_name}")
 
     expect(current_path).to eq("/gym_members/#{@amy.id}")
@@ -29,7 +30,7 @@ RSpec.describe 'edit gym member form', type: :feature do
     expect(page).to have_content("Belay Certified: false")
   end
 
-  xit 'makes no changes without input' do
+  it 'makes no changes without input' do
     visit "/gym_members/#{@rosa.id}/edit"
 
     click_button("Update #{@rosa.full_name}")
