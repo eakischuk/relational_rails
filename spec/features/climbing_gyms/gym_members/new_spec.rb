@@ -18,10 +18,10 @@ RSpec.describe 'new gym member form', type: :feature do
   it 'can create a new climbing gym member' do
     visit "/climbing_gyms/#{@et.id}/gym_members/new"
 
-    fill_in('First Name', with: 'Raymond')
-    fill_in('Last Name', with: 'Holt')
-    choose('True')
-    fill_in('Monthly Check-ins', with: 17)
+    fill_in('First name', with: 'Raymond')
+    fill_in('Last name', with: 'Holt')
+    choose('Belay Certified')
+    fill_in('Monthly checkins', with: 17)
     click_button('Create Gym Member')
 
     expect(current_path).to eq("/climbing_gyms/#{@et.id}/gym_members")
