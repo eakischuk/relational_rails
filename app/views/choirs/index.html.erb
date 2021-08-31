@@ -1,5 +1,10 @@
-<h1>Choirs</h1>
+<nav>
+  <a href="/choir_members">All Choir Members</a>
+  <a href="/choirs">All Choirs</a>
+</nav>
 
+<h1>Choirs</h1>
 <% @choir.each do |choir| %>
   <p><%= link_to choir.name, "/choirs/#{choir.id}" %></p>
+  <p><%= "#{choir.name} - Date Created: #{choir.created_at}" %></p>
 <% end %>
