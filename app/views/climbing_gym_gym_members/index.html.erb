@@ -1,5 +1,5 @@
 <h2><%= @gym.name %></h2>
-<nav><a href="/climbing_gyms">Climbing Gyms</a><a href="/gym_members">All Gym Members</a></nav>
+<nav><%= link_to "Climbing Gyms", "/climbing_gyms", method: :get %> - <%= link_to "All Gym Members", "/gym_members", method: :get %></nav>
 <% @members.each do |member| %>
 <div><h3><%= member.full_name %></h3>
   <p>Belay Certified: <%= member.belay_status %></p>
