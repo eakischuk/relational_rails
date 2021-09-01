@@ -1,10 +1,10 @@
 <h1>Gym Members</h1>
 <nav><a href="/climbing_gyms">Climbing Gyms</a></nav>
 <% @gym_members.each do |gym_member| %>
-  <h3><%= button_to "#{gym_member.full_name}", "/gym_members/#{gym_member.id}", method: :get %></h3>
+  <h3><%= link_to "#{gym_member.full_name}", "/gym_members/#{gym_member.id}", method: :get %></h3>
   <p>Home Gym: <%= gym_member.climbing_gym.name %></p>
   <p>Belay Certified: <%= gym_member.belay_status %></p>
   <p>Monthly Check-ins: <%= gym_member.monthly_checkins %></p>
-  <a href="/gym_members/<%= gym_member.id %>/edit">Update <%= gym_member.full_name %></a>
+  <%= button_to "Update #{gym_member.full_name}", "/gym_members/#{gym_member.id}/edit", method: :get %>
   <%= button_to "Delete #{gym_member.full_name}", "/gym_members/#{gym_member.id}", method: :delete %>
 <% end %>

@@ -1,7 +1,9 @@
 <h1>Climbing Gyms</h1>
-<nav><a href="/gym_members">All Gym Members</a></nav>
+<nav><%= link_to "All Gym Members", "/gym_members", method: :get %></nav>
 <% @gyms.each do |gym|%>
-  <p><%= "#{gym.name} - Date Created: #{gym.created_at}" %> - <a href="/climbing_gyms/<%= gym.id %>/edit">Update <%= gym.name %></a></p>
-<br>
+  <h3><%= link_to "#{gym.name}", "/climbing_gyms/#{gym.id}", method: :get %></h3>
+  <p><%= " Date Created: #{gym.created_at}" %>
+  <%= button_to "Update #{gym.name}", "/climbing_gyms/#{gym.id}/edit", method: :get %>
+  </p>
 <% end %>
-<a href="/climbing_gyms/new">New Climbing Gym</a>
+<%= button_to "New Climbing Gym", "/climbing_gyms/new", method: :get %>

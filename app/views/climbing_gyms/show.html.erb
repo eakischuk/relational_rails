@@ -1,8 +1,8 @@
 <h2><%= @gym.name %></h2>
-<nav><a href="/climbing_gyms">Climbing Gyms</a> <a href="/gym_members">All Gym Members</a></nav>
+<nav><%= link_to "Climbing Gyms", "/climbing_gyms", method: :get %> - <%= link_to "All Gym Members", "/gym_members", method: :get %></nav>
 <p>Ropes: <%= @gym.ropes %></p>
 <p>Number of Routes: <%= @gym.total_routes %></p>
 <p>Total Members: <%= @gym.member_count %></p>
-<a href=<%= "/climbing_gyms/#{@gym.id}/gym_members" %>><%= @gym.name %> Members</a>
-<a href=<%= "/climbing_gyms/#{@gym.id}/edit" %>>Update <%= @gym.name %></a>
+<%= button_to "#{@gym.name} Members", "/climbing_gyms/#{@gym.id}/gym_members", method: :get %>
+<%= button_to "Update #{@gym.name}", "/climbing_gyms/#{@gym.id}/edit", method: :get %>
 <%= button_to "Delete #{@gym.name}", "/climbing_gyms/#{@gym.id}", method: :delete %>

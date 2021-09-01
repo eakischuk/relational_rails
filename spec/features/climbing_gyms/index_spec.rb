@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Cimbing Gym index', type: :feature do
   before(:each) do
-    @et = ClimbingGym.create!(name: "EarthTreks", ropes: true, total_routes: 200)
+    @et = ClimbingGym.create!(name: "EarthTreks", ropes: true, total_routes: 200, created_at: "2021-08-01 22:03:19 UTC")
     @movement = ClimbingGym.create!(name: "Movement RiNo", ropes: false, total_routes: 70)
     @dbc = ClimbingGym.create!(name: "Denver Bouldering Club", ropes: false, total_routes: 85)
   end
@@ -23,11 +23,11 @@ RSpec.describe 'Cimbing Gym index', type: :feature do
   it 'shows creation date next to name' do
     visit "/climbing_gyms"
 
-    expect(page).to have_content("Movement RiNo - Date Created: #{@movement.created_at}")
-    expect(page).to have_content("EarthTreks - Date Created: #{@et.created_at}")
-    expect(page).to have_content("Denver Bouldering Club - Date Created: #{@dbc.created_at}")
+    expect(page).to have_content("Date Created: #{@movement.created_at}")
+    expect(page).to have_content("Date Created: #{@et.created_at}")
+    expect(page).to have_content("Date Created: #{@dbc.created_at}")
     expect("#{@dbc.name}").to appear_before("#{@dbc.created_at}", only_text: true)
-    expect("Denver Bouldering Club - Date Created: #{@dbc.created_at}").to appear_before("EarthTreks - Date Created: #{@et.created_at}", only_text: true)
+    expect("Date Created: #{@dbc.created_at}").to appear_before("Date Created: #{@et.created_at}", only_text: true)
   end
 
   it 'has all members link' do

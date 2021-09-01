@@ -19,8 +19,9 @@ RSpec.describe GymMember, type: :model do
 
   describe 'class methods' do
     it 'filters by number of checkins' do
-      expect(GymMember.checkin_min).to eq([@jake, @amy, @rosa])
+      expect(GymMember.checkin_min(0)).to eq([@jake, @amy, @rosa])
       expect(GymMember.checkin_min(5)).to eq([@amy, @rosa])
+      expect(GymMember.checkin_min(15)).to eq([])
     end
   end
 end
