@@ -4,7 +4,13 @@
 <ul><h3><%= member.full_name %></h3>
   <li>Belay Certified: <%= member.belay_status %></li>
   <li>Monthly Check-ins: <%= member.monthly_checkins %></li>
+  <li><%= button_to "Delete #{member.full_name}", "/gym_members/#{member.id}", method: :delete %></li>
 </ul>
 <% end %>
-<a href="/climbing_gyms/<%= @gym.id %>/gym_members/new">Create Gym Member</a>
+<%= link_to "Create Gym Member", "/climbing_gyms/#{@gym.id}/gym_members/new" %>
 <%= link_to "Order Members", "/climbing_gyms/#{@gym.id}/gym_members?order=alphabet" %>
+<%= form_with url: "/climbing_gyms/#{@gym.id}/gym_members", method: :get, local: true do |f| %>
+  <%= f.label :minimum_checkins, "Minimum Check-ins:" %>
+  <%= f.number_field :minimum_checkins %><br>
+  <%= f.submit "Only return members with more than minimum monthly checkins" %>
+<% end %>
