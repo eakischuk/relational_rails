@@ -28,6 +28,7 @@ RSpec.describe ClimbingGym, type: :model do
     it 'orders members by name' do
       expect(@et.sort_members('alphabet')).to eq([@amy, @jake])
       expect(@et.sort_members).to eq([@jake, @amy])
+      expect(@dbc.sort_members).to eq([])
     end
   end
 end

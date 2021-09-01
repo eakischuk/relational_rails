@@ -12,8 +12,8 @@ RSpec.describe GymMember, type: :model do
 
   describe 'instance methods' do
     it 'has full name' do
-
       expect(@amy.full_name).to eq("Amy Santiago")
+      expect(@jake.full_name).to eq("Jake Peralta")
     end
   end
 
