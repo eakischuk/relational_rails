@@ -12,9 +12,9 @@ RSpec.describe 'Gym Members index' do
     it 'displays member names' do
       visit '/gym_members'
 
-      expect(page).to have_content(@amy.full_name)
-      expect(page).to have_content(@rosa.full_name)
-      expect(page).to_not have_content(@jake.full_name)
+      expect(page).to have_button(@amy.full_name)
+      expect(page).to have_button(@rosa.full_name)
+      expect(page).to_not have_button(@jake.full_name)
     end
 
     it 'displays home gym' do
@@ -58,6 +58,20 @@ RSpec.describe 'Gym Members index' do
 
       click_on 'Update Rosa Diaz'
       expect(current_path).to eq("/gym_members/#{@rosa.id}/edit")
+    end
+
+    it 'has delete button for each member' do
+      visit "/gym_members"
+
+      expect(page).to have_button("Delete Amy Santiago")
+      expect(page).to_not have_button("Delete Jake Peralta")
+      expect(page).to have_button("Delete Rosa Diaz")
+
+      click_on "Delete Amy Santiago"
+      expect(current_path).to eq("/gym_members")
+      expect(page).to_not have_content("Amy Santiago")
+      expect(page).to_not have_content("Jake Peralta")
+      expect(page).to have_content("Rosa Diaz")
     end
   end
 end

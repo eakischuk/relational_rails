@@ -19,8 +19,9 @@ RSpec.describe 'edit gym member form', type: :feature do
     visit "/gym_members/#{@amy.id}/edit"
 
 
-    choose('False')
-    fill_in('Monthly Check-ins:', with: 4)
+    choose('Not Belay Certified')
+    # save_and_open_page
+    fill_in('Monthly checkins', with: 4)
     click_button("Update #{@amy.full_name}")
 
     expect(current_path).to eq("/gym_members/#{@amy.id}")

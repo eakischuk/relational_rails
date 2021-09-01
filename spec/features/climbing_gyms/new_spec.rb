@@ -12,8 +12,8 @@ RSpec.describe 'new gym form', type: :feature do
     visit '/climbing_gyms/new'
 
     fill_in('Name', with: 'Planet Granite')
-    choose('True')
-    fill_in('Total Routes', with: 250)
+    choose('Ropes')
+    fill_in('Total routes', with: 250)
     click_button('Create Climbing Gym')
 
     expect(current_path).to eq("/climbing_gyms")

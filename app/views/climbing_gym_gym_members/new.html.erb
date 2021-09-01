@@ -1,16 +1,13 @@
-<form action="/climbing_gyms/<%= @gym.id %>/gym_members" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>Enter a new Gym Member: </p>
-  <label for="first_name">First Name:</label><br>
-  <input type="text" id="first_name" name="first_name"><br>
-  <label for="last_name">Last Name:</label><br>
-  <input type="text" id="last_name" name="last_name"><br>
-  <p>Belay Certification?</p>
-  <input type="radio" id="belay" value="true" name="belay_status">
-  <label for="belay">True</label><br>
-  <input type="radio" id="no_belay" value="false" name="belay_status">
-  <label for="no_belay">False</label><br>
-  <label for="checkins">Monthly Check-ins:</label><br>
-  <input type="text" id="checkins" name="checkins"><br>
-  <input type="submit" value="Create Gym Member"
-</form>
+<%= form_with url:"/climbing_gyms/#{@gym.id}/gym_members", method: :post, local: true do |f| %>
+   <%= f.label :first_name %><br>
+   <%= f.text_field :first_name %><br>
+   <%= f.label :last_name %><br>
+   <%= f.text_field :last_name %><br>
+   <%= f.radio_button :belay_status, 'true' %>
+   <%= f.label :belay_status_true, 'Belay Certified' %>
+   <%= f.radio_button :belay_status, 'false' %>
+   <%= f.label :belay_status_false, 'Not Belay Certified' %><br>
+   <%= f.label :monthly_checkins %><br>
+   <%= f.number_field :monthly_checkins %><br>
+   <%= f.submit "Create Gym Member" %>
+<% end %>

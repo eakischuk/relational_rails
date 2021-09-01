@@ -1,7 +1,8 @@
 class ClimbingGymGymMembersController < ApplicationController
   def index
     @gym = ClimbingGym.find(params[:gym_id])
-    @members = @gym.gym_members.order(:first_name, :last_name)
+    min = params[:minimum_checkins]
+    @members = @gym.sort_members(params[:order]).checkin_min(min)
   end
 
   def new
@@ -13,7 +14,7 @@ class ClimbingGymGymMembersController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       belay_status: params[:belay_status],
-      monthly_checkins: params[:checkins],
+      monthly_checkins: params[:monthly_checkins],
       climbing_gym_id: params[:gym_id]
       })
     gym_member.save

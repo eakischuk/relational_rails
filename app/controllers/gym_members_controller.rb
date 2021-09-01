@@ -18,9 +18,15 @@ class GymMembersController < ApplicationController
       first_name: params[:first_name],
       last_name: params[:last_name],
       belay_status: params[:belay_status],
-      monthly_checkins: params[:checkins],
+      monthly_checkins: params[:monthly_checkins],
       })
     member.save
     redirect_to "/gym_members/#{member.id}"
+  end
+
+  def destroy
+    member = GymMember.find(params[:member_id])
+    member.destroy
+    redirect_to '/gym_members'
   end
 end

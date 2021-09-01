@@ -34,4 +34,10 @@ class ClimbingGymsController < ApplicationController
       climbing_gym.save
     redirect_to "/climbing_gyms/#{climbing_gym.id}"
   end
+
+  def destroy
+    climbing_gym = ClimbingGym.find(params[:gym_id])
+    climbing_gym.destroy
+    redirect_to '/climbing_gyms'
+  end
 end
