@@ -66,4 +66,28 @@ RSpec.describe 'Climbing Gym members index' do
     expect("Monthly Check-ins: 12").to appear_before("Monthly Check-ins: 3")
     expect("Belay Certified: true").to appear_before("Belay Certified: false")
   end
+
+  it 'limits records of page by monthly checkins using form input' do
+    visit "/climbing_gyms/#{@et.id}/gym_members"
+
+    fill_in('Minimum Check-ins:', with: 5)
+    click_on "Only return members with more than minimum monthly checkins"
+    expect(current_path).to eq("/climbing_gyms/#{@et.id}/gym_members")
+    expect(page).to have_content("Amy Santiago")
+    expect(page).to_not have_content("Jake Peralta")
+    expect(page).to_not have_content("Rosa Diaz")
+  end
+
+  it 'has delete button for each member' do
+    visit "/climbing_gyms/#{@et.id}/gym_members"
+
+    expect(page).to have_button("Delete Amy Santiago")
+    expect(page).to have_button("Delete Jake Peralta")
+    expect(page).to_not have_button("Delete Rosa Diaz")
+
+    click_on "Delete Jake Peralta"
+    expect(current_path).to eq("/gym_members")
+    expect(page).to have_content("Amy Santiago")
+    expect(page).to_not have_content("Jake Peralta")
+  end
 end
