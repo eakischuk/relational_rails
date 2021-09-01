@@ -10,3 +10,6 @@
 <p>Active: <%=@choir_member.active %></p>
 <p>Voice Type: <%=@choir_member.voice_type %></p>
 <p>Choir: <%=@choir_member.choir.name %></p>
+
+<h4><a href="/choir_members/<%= @choir_member.id %>/edit">Update</a></h4>
+<%= button_to "Delete #{@choir_member.name}", "/choir_members/#{@choir_member.id}", method: :delete %>
