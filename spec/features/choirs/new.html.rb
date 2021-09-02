@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-Rspec.describe 'new choir page', type: :feature do
+RSpec.describe 'new choir page', type: :feature do
   it 'has new choir link' do
     visit "/choirs"
 
