@@ -1,8 +1,8 @@
-<nav><a href="/climbing_gyms">Climbing Gyms</a><a href="/gym_members">All Gym Members</a></nav>
+<nav><%= link_to "Climbing Gyms", "/climbing_gyms", method: :get %> - <%= link_to "All Gym Members", "/gym_members", method: :get %></nav>
 <ul><h2><%= @gym_member.full_name %></h2>
   <li>Home Gym: <%= @gym_member.climbing_gym.name %></li>
   <li>Belay Certified: <%= @gym_member.belay_status %></li>
   <li>Monthly Check-ins: <%= @gym_member.monthly_checkins %></li>
 </ul>
-<a href="/gym_members/<%= @gym_member.id %>/edit">Update <%= @gym_member.full_name %></a>
+<%= button_to "Update #{@gym_member.full_name}", "/gym_members/#{@gym_member.id}/edit", method: :get %>
 <%= button_to "Delete #{@gym_member.full_name}", "/gym_members/#{@gym_member.id}", method: :delete %>

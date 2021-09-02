@@ -10,7 +10,7 @@ class ClimbingGym < ApplicationRecord
   end
 
   def sort_members(order = false)
-    if order
+    if order == 'alphabet'
       gym_members.order(:first_name, :last_name)
     else
       gym_members

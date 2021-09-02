@@ -10,55 +10,61 @@ RSpec.describe 'climbing gym show page', type: :feature do
     @rosa = GymMember.create!(climbing_gym: @movement, first_name: "Rosa", last_name: "Diaz", belay_status: true, monthly_checkins: 14)
   end
 
-  it 'displays the gym name' do
-    visit "/climbing_gyms/#{@et.id}"
+  describe 'display of records and attributes' do
+    it 'displays the gym name' do
+      visit "/climbing_gyms/#{@et.id}"
 
-    expect(page).to have_content("EarthTreks")
+      expect(page).to have_content("EarthTreks")
+    end
+
+    it 'displays if the gym has ropes' do
+      visit "/climbing_gyms/#{@et.id}"
+      expect(page).to have_content("Ropes: true")
+
+      visit "/climbing_gyms/#{@dbc.id}"
+      expect(page).to have_content("Ropes: false")
+    end
+
+    it 'displays number of routes' do
+      visit "/climbing_gyms/#{@et.id}"
+
+      expect(page).to have_content("Number of Routes: 200")
+    end
+
+    it 'displays number of members associated' do
+      visit "/climbing_gyms/#{@et.id}"
+      expect(page).to have_content("Total Members: 2")
+
+      visit "/climbing_gyms/#{@dbc.id}"
+      expect(page).to have_content("Total Members: 0")
+    end
   end
 
-  it 'displays if the gym has ropes' do
-    visit "/climbing_gyms/#{@et.id}"
+  describe 'links and buttons' do
+    it 'has link to all members' do
+      visit "/climbing_gyms/#{@et.id}"
 
-    expect(page).to have_content("Ropes: true")
+      click_on 'All Gym Members'
+      expect(current_path).to eq('/gym_members')
+    end
+
+    it 'has all gyms link' do
+      visit "/climbing_gyms/#{@et.id}"
+
+      click_on 'Climbing Gyms'
+      expect(current_path).to eq('/climbing_gyms')
+    end
+
+    it 'has gym specific members link' do
+      visit "/climbing_gyms/#{@et.id}"
+
+      click_on "#{@et.name} Members"
+      expect(current_path).to eq("/climbing_gyms/#{@et.id}/gym_members")
+
+      visit "/climbing_gyms/#{@dbc.id}"
+
+      click_on "#{@dbc.name} Members"
+      expect(current_path).to eq("/climbing_gyms/#{@dbc.id}/gym_members")
+    end
   end
-
-  it 'displays number of routes' do
-    visit "/climbing_gyms/#{@et.id}"
-
-    expect(page).to have_content("Number of Routes: 200")
-  end
-
-  it 'displays number of members associated' do
-    visit "/climbing_gyms/#{@et.id}"
-    expect(page).to have_content("Total Members: 2")
-
-    visit "/climbing_gyms/#{@dbc.id}"
-    expect(page).to have_content("Total Members: 0")
-  end
-
-  it 'has link to all members' do
-    visit "/climbing_gyms/#{@et.id}"
-
-    click_on 'All Gym Members'
-    expect(current_path).to eq('/gym_members')
-  end
-
-  it 'has all gyms link' do
-    visit "/climbing_gyms/#{@et.id}"
-
-    click_on 'Climbing Gyms'
-    expect(current_path).to eq('/climbing_gyms')
-  end
-
- it 'has gym specific members link' do
-   visit "/climbing_gyms/#{@et.id}"
-
-   click_on "#{@et.name} Members"
-   expect(current_path).to eq("/climbing_gyms/#{@et.id}/gym_members")
-
-   visit "/climbing_gyms/#{@dbc.id}"
-
-   click_on "#{@dbc.name} Members"
-   expect(current_path).to eq("/climbing_gyms/#{@dbc.id}/gym_members")
- end
 end

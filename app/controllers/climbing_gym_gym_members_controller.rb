@@ -2,7 +2,11 @@ class ClimbingGymGymMembersController < ApplicationController
   def index
     @gym = ClimbingGym.find(params[:gym_id])
     min = params[:minimum_checkins]
-    @members = @gym.sort_members(params[:order]).checkin_min(min)
+    if min != nil
+      @members = @gym.sort_members(params[:order]).checkin_min(min)
+    else
+      @members = @gym.sort_members(params[:order])
+    end
   end
 
   def new
