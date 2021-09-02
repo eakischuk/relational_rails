@@ -7,6 +7,7 @@
 <% @choir.each do |choir| %>
   <p><%= link_to choir.name, "/choirs/#{choir.id}" %></p>
   <p><%= "#{choir.name} - Date Created: #{choir.created_at}" %> - <a href="/choirs/<%= choir.id %>/edit">Update <%= choir.name %></a></p>
+  <p><%= button_to "Delete #{choir.name}", "/choirs/#{choir.id}", method: :delete %></p>
 <% end %>
 
 <h3><a href="/choirs/new">New Choir</a></h3>
