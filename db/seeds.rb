@@ -29,3 +29,12 @@ movement.gym_members.create!(first_name: "Rosa", last_name: "Diaz", belay_status
 # divo.choir_members.create!(name: "Lucy Perez", age: 34, active: true, voice_type: "Soprano")
 # divo.choir_members.create!(name: "Sam River", age: 24, active: true, voice_type: "Alto")
 # volcestra.choir_members.create!(name: "Respi Luz", age: 28, active: true, voice_type: "Alto")
+Choir.destroy_all
+ChoirMember.destroy_all
+
+divo = Choir.create!(name: "Divo", openings: 1, active: true)
+volcestra = Choir.create!(name: "Volcestra", openings: 2, active: true)
+
+divo.choir_members.create!(name: "Lucy Perez", age: 34, active: true, voice_type: "Soprano")
+divo.choir_members.create!(name: "Sam River", age: 24, active: true, voice_type: "Alto")
+volcestra.choir_members.create!(name: "Respi Luz", age: 28, active: true, voice_type: "Alto")

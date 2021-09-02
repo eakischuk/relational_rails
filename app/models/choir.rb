@@ -18,6 +18,6 @@ class Choir <ApplicationRecord
       choir_members.order(:name)
     else
       choir_members
-    end 
+    end
   end
 end
