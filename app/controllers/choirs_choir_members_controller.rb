@@ -2,6 +2,8 @@ class ChoirsChoirMembersController < ApplicationController
   def index
     @choirs_choir_members = ChoirMember.where(choir_id: params[:choir_id])
     @choir = Choir.find_by(id: params[:choir_id])
+    min = params[:minimum_age]
+    @choir_members = @choir.sort_members(params[:order]).min_age(min)
   end
 
   def new
