@@ -6,7 +6,7 @@
 
 <h2><%= @choir.name %></h2>
 
-<% @choirs_choir_members.each do |member| %>
+<% @choir_members.each do |member| %>
 <ul>
   <h3><%= member.name %></h3>
   <p><%= member.age%></p>
@@ -15,12 +15,11 @@
   <p><%= member.choir.name%></p>
 </ul>
 <% end %>
-<a href="/choirs/<%= @choir.id %>/choir_members/new">Create Choir Member</a>
-<%= link_to "Order Members", "/choirs/#{@choir.id}/choir_members?order=alphabet" %>
+<%= link_to "Create Choir Member", "/choirs#{@choir.id}/choir_members/new", method: :get %>
+<%= link_to "Order Members", "/choirs/#{@choir.id}/choir_members?order=alphabet" %><br>
 
-<%= form_with url: "choirs/#{@choir.id}/choir_members", method: :get, local: true do |f| %>
-  <%= f.label :minimum_age %><br>
-  <%= f.number_field :minimum_age %><br>
-
+<%= form_with url: "/choirs/#{@choir.id}/choir_members", method: :get, local: true do |f| %>
+  <%= f.label :minimum_age %>
+  <%= f.number_field :minimum_age %>
   <%= f.submit "Only Return Members Older Than Minimum Age" %>
 <% end %>
