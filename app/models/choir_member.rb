@@ -6,4 +6,14 @@ class ChoirMember <ApplicationRecord
   validates_presence_of :age
   validates_presence_of :active
   validates_presence_of :voice_type
+
+
+  def self.min_age(sift = nil)
+    if sift == nil
+      sift = 0
+      where("age > #{sift}")
+    else
+      where("age > #{sift}")
+    end 
+  end
 end
