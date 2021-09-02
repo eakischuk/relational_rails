@@ -1,0 +1,19 @@
+<%= form_with url: "/choir_members/#{@choir_member.id}", method: :patch, local: true do |f| %>
+
+    <%= f.label :Name %><br>
+    <%= f.text_field :name, value:@choir_member.name %><br>
+
+    <%= f.label :Age %><br>
+    <%= f.text_field :age, value:@choir_member.age %><br>
+
+    <%= f.radio_button :Active, 'true', :checked => (@choir_member.active == true) %>
+    <%= f.label :is_active, 'Is Active' %>
+
+    <%= f.radio_button :Active, 'false', :checked => (@choir_member.active == false) %>
+    <%= f.label :is_not_active, 'Is Not Active' %><br>
+
+    <%= f.label :voice_type %><br>
+    <%= f.text_field :voice_type, value:@choir_member.voice_type %><br>
+
+    <%= f.submit "Update #{@choir_member.name}" %>
+  <% end %>

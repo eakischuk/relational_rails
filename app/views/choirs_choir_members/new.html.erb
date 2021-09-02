@@ -1,0 +1,16 @@
+<%= form_with url:"/choirs/#{@choir.id}/choir_members", method: :post, local: true do |f| %>
+
+   <%= f.label :Name %><br>
+   <%= f.text_field :name %><br>
+
+   <%= f.label :Age %><br>
+   <%= f.text_field :age %><br>
+
+   <%= f.radio_button :active, 'true' %>
+   <%= f.label :is_active, 'Is Active' %>
+
+   <%= f.radio_button :active, 'false' %>
+   <%= f.label :is_not_active, 'Is Not Active' %><br>
+
+   <%= f.submit "Create Choir Member" %>
+<% end %>
