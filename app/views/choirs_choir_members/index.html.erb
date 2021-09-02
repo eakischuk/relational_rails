@@ -17,3 +17,10 @@
 <% end %>
 <a href="/choirs/<%= @choir.id %>/choir_members/new">Create Choir Member</a>
 <%= link_to "Order Members", "/choirs/#{@choir.id}/choir_members?order=alphabet" %>
+
+<%= form_with url: "choirs/#{@choir.id}/choir_members", method: :get, local: true do |f| %>
+  <%= f.label :minimum_age %><br>
+  <%= f.number_field :minimum_age %><br>
+
+  <%= f.submit "Only Return Members Older Than Minimum Age" %>
+<% end %>

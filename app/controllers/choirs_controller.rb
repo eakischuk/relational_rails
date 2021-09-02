@@ -22,7 +22,7 @@ class ChoirsController < ApplicationController
   end
 
   def edit
-    @choir = Choir.find(params[:id])
+    @choir = Choir.find_by(id: params[:id])
   end
 
   def update
@@ -32,8 +32,8 @@ class ChoirsController < ApplicationController
       openings: params[:openings],
       active: params[:active]
       })
-      choir.save
-    redirect_to '/choirs/#{choir.choir_id}'
+    choir.save
+    redirect_to "/choirs/#{choir.id}"
   end
 
   def destroy
